@@ -31,6 +31,18 @@ mvn spring-boot:run
 
 The API will be available at: http://localhost:8080
 
+**Swagger UI:** http://localhost:8080/swagger-ui.html  
+**OpenAPI Docs:** http://localhost:8080/api-docs
+
+## API Documentation
+
+The API includes comprehensive Swagger/OpenAPI documentation. Once the application is running, visit:
+
+- **Swagger UI (Interactive):** http://localhost:8080/swagger-ui.html
+- **OpenAPI JSON:** http://localhost:8080/api-docs
+
+You can test all endpoints directly from the Swagger UI interface.
+
 ## API Endpoints
 
 ### 1. Market Statistics
