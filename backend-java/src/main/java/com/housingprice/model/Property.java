@@ -1,6 +1,7 @@
 package com.housingprice.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Schema(description = "Property details")
 public class Property {
@@ -8,6 +9,7 @@ public class Property {
     private Long id;
     
     @Schema(description = "Property square footage", example = "1500.0")
+    @JsonProperty("square_footage")
     private Double squareFootage;
     
     @Schema(description = "Number of bedrooms", example = "3")
@@ -17,15 +19,19 @@ public class Property {
     private Double bathrooms;
     
     @Schema(description = "Year the property was built", example = "2010")
+    @JsonProperty("year_built")
     private Integer yearBuilt;
     
     @Schema(description = "Lot size in square feet", example = "7000.0")
+    @JsonProperty("lot_size")
     private Double lotSize;
     
     @Schema(description = "Distance to city center in miles", example = "5.0")
+    @JsonProperty("distance_to_city_center")
     private Double distanceToCityCenter;
     
     @Schema(description = "School rating (0-10)", example = "7.5")
+    @JsonProperty("school_rating")
     private Double schoolRating;
     
     @Schema(description = "Property price in dollars", example = "285000.0")
