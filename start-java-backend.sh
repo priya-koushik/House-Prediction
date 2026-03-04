@@ -4,12 +4,19 @@ echo "🏠 Starting Java Backend for Market Analysis"
 echo "============================================"
 echo ""
 
+# Set JAVA_HOME if OpenJDK is installed via Homebrew
+if [ -d "/usr/local/Cellar/openjdk" ]; then
+    LATEST_JDK=$(ls -1 /usr/local/Cellar/openjdk/ | sort -V | tail -1)
+    export JAVA_HOME="/usr/local/Cellar/openjdk/$LATEST_JDK/libexec/openjdk.jdk/Contents/Home"
+    export PATH="$JAVA_HOME/bin:$PATH"
+fi
+
 # Check if Java is installed
 if ! command -v java &> /dev/null; then
     echo "❌ Java is not installed."
     echo ""
-    echo "To install Java 17 and Maven:"
-    echo "  brew install openjdk@17 maven"
+    echo "To install Java and Maven:"
+    echo "  brew install openjdk maven"
     echo ""
     exit 1
 fi

@@ -1,13 +1,7 @@
 package com.housingprice.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Schema(description = "What-if analysis response with financial calculations")
 public class WhatIfResponse {
     @Schema(description = "ML model predicted price", example = "285000.0")
@@ -27,4 +21,34 @@ public class WhatIfResponse {
     
     @Schema(description = "Total interest paid over loan term", example = "197613.2")
     private Double totalInterest;
+
+    public WhatIfResponse() {}
+
+    public WhatIfResponse(Double predictedPrice, Double adjustedPrice, Double downPaymentAmount,
+                         Double loanAmount, Double monthlyPayment, Double totalInterest) {
+        this.predictedPrice = predictedPrice;
+        this.adjustedPrice = adjustedPrice;
+        this.downPaymentAmount = downPaymentAmount;
+        this.loanAmount = loanAmount;
+        this.monthlyPayment = monthlyPayment;
+        this.totalInterest = totalInterest;
+    }
+
+    public Double getPredictedPrice() { return predictedPrice; }
+    public void setPredictedPrice(Double predictedPrice) { this.predictedPrice = predictedPrice; }
+    
+    public Double getAdjustedPrice() { return adjustedPrice; }
+    public void setAdjustedPrice(Double adjustedPrice) { this.adjustedPrice = adjustedPrice; }
+    
+    public Double getDownPaymentAmount() { return downPaymentAmount; }
+    public void setDownPaymentAmount(Double downPaymentAmount) { this.downPaymentAmount = downPaymentAmount; }
+    
+    public Double getLoanAmount() { return loanAmount; }
+    public void setLoanAmount(Double loanAmount) { this.loanAmount = loanAmount; }
+    
+    public Double getMonthlyPayment() { return monthlyPayment; }
+    public void setMonthlyPayment(Double monthlyPayment) { this.monthlyPayment = monthlyPayment; }
+    
+    public Double getTotalInterest() { return totalInterest; }
+    public void setTotalInterest(Double totalInterest) { this.totalInterest = totalInterest; }
 }

@@ -27,15 +27,15 @@ public class DataLoaderService {
             for (int i = 1; i < rows.size(); i++) {
                 String[] row = rows.get(i);
                 Property property = new Property();
-                property.setId((long) i);
-                property.setSquareFootage(Double.parseDouble(row[0]));
-                property.setBedrooms(Integer.parseInt(row[1]));
-                property.setBathrooms(Double.parseDouble(row[2]));
-                property.setYearBuilt(Integer.parseInt(row[3]));
-                property.setLotSize(Double.parseDouble(row[4]));
-                property.setDistanceToCityCenter(Double.parseDouble(row[5]));
-                property.setSchoolRating(Double.parseDouble(row[6]));
-                property.setPrice(Double.parseDouble(row[7]));
+                property.setId(Long.parseLong(row[0]));
+                property.setSquareFootage(Double.parseDouble(row[1]));
+                property.setBedrooms(Integer.parseInt(row[2]));
+                property.setBathrooms(Double.parseDouble(row[3]));
+                property.setYearBuilt(Integer.parseInt(row[4]));
+                property.setLotSize(Double.parseDouble(row[5]));
+                property.setDistanceToCityCenter(Double.parseDouble(row[6]));
+                property.setSchoolRating(Double.parseDouble(row[7]));
+                property.setPrice(Double.parseDouble(row[8]));
                 properties.add(property);
             }
             
