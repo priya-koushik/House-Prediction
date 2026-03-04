@@ -34,14 +34,21 @@ export default function MarketAnalysisPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Load market data (in real app, this would come from Java backend)
-    // For now, we'll simulate it
+    // Load market data from Java backend
     const loadData = async () => {
       try {
-        // Simulate API call
-        const response = await fetch('/House Price Dataset.csv')
-        // In production, parse CSV or get from Java API
-        // For now, use mock data
+        const response = await fetch('http://localhost:8080/api/market/properties')
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch market data')
+        }
+        
+        const data = await response.json()
+        setMarketData(data)
+        setFilteredData(data)
+      } catch (error) {
+        console.error('Error loading data:', error)
+        // Fallback to mock data if Java backend is not available
         const mockData: MarketData[] = Array.from({ length: 50 }, (_, i) => ({
           id: i + 1,
           square_footage: 1000 + Math.random() * 2000,
@@ -56,8 +63,6 @@ export default function MarketAnalysisPage() {
         
         setMarketData(mockData)
         setFilteredData(mockData)
-      } catch (error) {
-        console.error('Error loading data:', error)
       } finally {
         setLoading(false)
       }

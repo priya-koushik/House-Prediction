@@ -11,23 +11,59 @@ export default function WhatIfAnalysis() {
 
   const [result, setResult] = useState<any>(null)
 
-  const calculateScenario = () => {
-    const basePrice = 300000
-    const newPrice = basePrice * (1 + scenario.priceChange / 100)
-    const loanAmount = newPrice * (1 - scenario.downPayment / 100)
-    const monthlyRate = scenario.interestRate / 100 / 12
-    const numPayments = 360 // 30 years
-    
-    const monthlyPayment = loanAmount * 
-      (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
-      (Math.pow(1 + monthlyRate, numPayments) - 1)
+  const calculateScenario = async () => {
+    try {
+      // Call Java backend what-if analysis endpoint
+      const response = await fetch('http://localhost:8080/api/market/what-if', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          squareFootage: 1500,
+          bedrooms: 3,
+          bathrooms: 2,
+          yearBuilt: 2010,
+          lotSize: 7000,
+          distanceToCityCenter: 5,
+          schoolRating: 7.5,
+          priceChangePercent: scenario.priceChange,
+          interestRate: scenario.interestRate,
+          downPaymentPercent: scenario.downPayment
+        })
+      })
 
-    setResult({
-      newPrice,
-      downPaymentAmount: newPrice * (scenario.downPayment / 100),
-      loanAmount,
-      monthlyPayment
-    })
+      if (!response.ok) {
+        throw new Error('Failed to calculate scenario')
+      }
+
+      const data = await response.json()
+      setResult({
+        newPrice: data.adjustedPrice,
+        downPaymentAmount: data.downPaymentAmount,
+        loanAmount: data.loanAmount,
+        monthlyPayment: data.monthlyPayment
+      })
+    } catch (error) {
+      console.error('Error calculating scenario:', error)
+      // Fallback to client-side calculation
+      const basePrice = 300000
+      const newPrice = basePrice * (1 + scenario.priceChange / 100)
+      const loanAmount = newPrice * (1 - scenario.downPayment / 100)
+      const monthlyRate = scenario.interestRate / 100 / 12
+      const numPayments = 360 // 30 years
+      
+      const monthlyPayment = loanAmount * 
+        (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
+        (Math.pow(1 + monthlyRate, numPayments) - 1)
+
+      setResult({
+        newPrice,
+        downPaymentAmount: newPrice * (scenario.downPayment / 100),
+        loanAmount,
+        monthlyPayment
+      })
+    }
   }
 
   return (
