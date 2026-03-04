@@ -1,0 +1,164 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="System Architecture" id="system-arch">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="House Price Prediction System - Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="320" y="20" width="520" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Client Layer -->
+        <mxCell id="client-layer" value="CLIENT LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="1000" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="browser" value="Web Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="120" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        
+        <!-- Frontend Layer -->
+        <mxCell id="frontend-layer" value="FRONTEND LAYER (Next.js 14)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="1000" height="180" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="nextjs-portal" value="Next.js Portal&#xa;(Port 3000)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="120" y="300" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="app1" value="App 1: Property Estimator&#xa;- Form Input&#xa;- Validation&#xa;- History&#xa;- Comparison" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="180" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="app2" value="App 2: Market Analysis&#xa;- Dashboard&#xa;- Filters&#xa;- What-If Tool&#xa;- Export" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="520" y="300" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="shared-components" value="Shared Components&#xa;- Navigation&#xa;- Layout&#xa;- Charts (Recharts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="740" y="300" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="tailwind" value="Tailwind CSS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="940" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        
+        <!-- Backend Layer -->
+        <mxCell id="backend-layer" value="BACKEND LAYER (API Services)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="1000" height="180" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="node-backend" value="Node.js Backend&#xa;(Port 5001)&#xa;&#xa;Express + k-NN&#xa;&#xa;Endpoints:&#xa;/api/predict&#xa;/api/batch-predict&#xa;/api/health" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="120" y="520" width="200" height="120" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="python-backend" value="Python Backend&#xa;(Port 8000)&#xa;&#xa;FastAPI + Scikit-learn&#xa;&#xa;Endpoints:&#xa;/predict&#xa;/predict/batch&#xa;/model-info&#xa;/health&#xa;/docs (Swagger)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="200" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="java-backend" value="Java Backend&#xa;(Future)&#xa;&#xa;Spring Boot 3.4.4&#xa;&#xa;Market Analysis&#xa;Aggregate Stats&#xa;Caching" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="520" width="200" height="120" as="geometry" />
+        </mxCell>
+
+        
+        <!-- ML Layer -->
+        <mxCell id="ml-layer" value="MACHINE LEARNING LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="1000" height="100" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="ml-model" value="ML Model&#xa;Linear Regression&#xa;(Scikit-learn)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="120" y="740" width="160" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scaler" value="Standard Scaler&#xa;(Feature Scaling)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="740" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="knn" value="k-NN Algorithm&#xa;(Node.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="520" y="740" width="160" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Layer -->
+        <mxCell id="data-layer" value="DATA LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1000" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="training-data" value="House Price Dataset.csv&#xa;(50 training samples)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="870" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="test-data" value="Test Data For Prediction.csv&#xa;(9 test samples)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="360" y="870" width="200" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrows/Connections -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="browser" target="nextjs-portal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="app1" target="node-backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" edge="1" parent="1" source="app1" target="python-backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="app2" target="java-backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="node-backend" target="knn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="python-backend" target="ml-model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" source="ml-model" target="training-data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <!-- Legend -->
+        <mxCell id="legend-box" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="850" y="700" width="210" height="220" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend1" value="Solid Line = Active" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="730" width="170" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend2" value="Dashed Line = Future/Optional" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="765" width="170" height="25" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="legend3" value="Green = Running Now" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="800" width="170" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend4" value="Blue = Ready to Deploy" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="835" width="170" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend5" value="Red = Future Implementation" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="870" width="170" height="25" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
